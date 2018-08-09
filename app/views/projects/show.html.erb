@@ -1,0 +1,14 @@
+<div align="center">
+  <h2 align="center">Show</h2>
+  <p>
+    Name: <%= @project.name %>
+  </p>
+  <br />
+  <p>
+    Description: <%= @project.description %>
+  </p>
+  <%= link_to "Edit Project", edit_project_path(@project) %>
+  <%= link_to "Project List", projects_path %>
+</div>
+
+
