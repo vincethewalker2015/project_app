@@ -1,0 +1,23 @@
+<div class="jumbotron center">
+  <h2 align="center">Index</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-4">
+    <table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% @projects.each do |pro| %>
+    <tr>
+      <td><%= pro.name %></td>
+       <td><%= pro.description %></td>
+       <td><%= link_to "Edit", edit_project_path(pro) %></td>
+       <td><%= link_to "View Project", project_path(pro) %></td>
+       <td><%= link_to "Delete", project_path(pro), method: :delete, data: {confirm: "Are you sure??"} %></td>
+    </tr>
+  <% end %>
+</table>
+  </div>
+</div>

@@ -1,14 +1,23 @@
-<div align="center">
-  <h2 align="center">Show</h2>
-  <p>
-    Name: <%= @project.name %>
-  </p>
-  <br />
-  <p>
-    Description: <%= @project.description %>
-  </p>
-  <%= link_to "Edit Project", edit_project_path(@project) %>
-  <%= link_to "Project List", projects_path %>
+<div class="center jumbotron">
+    <h2 align="center">Show</h2>
 </div>
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-4">
+    <div class="well">
+    <p>
+      Name: <%= @project.name %>
+    </p>
+    <br />
+    <p>
+      Description: <%= @project.description %>
+    </p>
+    <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary" %>
+    <%= link_to "Project List", projects_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+  
+
 
 
