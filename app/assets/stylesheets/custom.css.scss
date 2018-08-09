@@ -1,2 +1,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.name {
+  text-align: justify;
+  color: red;
+}
+
+/* Index page */
+
+.spacer {
+  visibility: hidden;
+}
+
+.bttn {
+  border: 2px solid white;
+}
+
+/* The Wells */
+
+.well.profile-black-white {
+    background-color: #ffffff;
+    border: 9px solid black;
+    border-radius: 25px;
+}
+
+.well.profile-black-white-thin {
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.well.profile-black-white-thin-b {
+    background-color: #e6f7ff ;
+    border: 1px solid black;
+    border-radius: 25px;
+}

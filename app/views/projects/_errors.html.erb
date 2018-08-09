@@ -1,8 +1,20 @@
 <% if @project.errors.any? %>
-  <h3>The Following errors prevented this project from being saved</h3>
-    <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            <%= pluralize(@project.errors.count, "error") %> prohibited this <%= @project.class %> from being saved:
+          </h2>
+          <div class="panel-body">
+            <ul>
+              <% @project.errors.full_messages.each do |msg| %>
+                 <li><%= msg %></li>
+              <% end %>
+           </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
