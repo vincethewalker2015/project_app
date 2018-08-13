@@ -1,10 +1,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* All */
+.toppie {
+  margin-top: 70px;
+}
+
+
+/* Navbar */
+.nav-button {
+  color: white !important;
+}
 
 .name {
   text-align: justify;
   color: red;
+}
+
+/* Home Page */
+
+.jumbotron {
+  background-image: asset-url("cover.png");
+  background-size: cover;
+  height: 600px;
+  color: #fff;
 }
 
 /* Index page */
@@ -15,6 +34,11 @@
 
 .bttn {
   border: 2px solid white;
+}
+
+.bigText {
+  font-weight: bold;
+  color: #36b1bc;
 }
 
 /* The Wells */
@@ -35,4 +59,11 @@
     background-color: #e6f7ff ;
     border: 1px solid black;
     border-radius: 25px;
+}
+
+/* Footer Section */
+
+.footer {
+  color: #d3d3d3;
+  margin-top: 300px;
 }

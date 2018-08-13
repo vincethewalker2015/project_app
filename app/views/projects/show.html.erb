@@ -1,22 +1,26 @@
 <%= render "layouts/flash" %>
-<div class="center jumbotron">
-    <h2 align="center">Show</h2>
+<div class="container">
+  <div class="row toppie">
+    <h2 align="center">Project</h2>
 </div>
 
 <div class="row">
-  <div class="col-md-3 col-md-offset-4">
+  <div class="col-md-6 col-md-offset-3">
     <div class="well">
-    <p>
+    <p align="center">
       Name: <%= @project.name %>
     </p>
     <br />
-    <p>
+    <p align="center">
       Description: <%= @project.description %>
     </p>
-    <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary" %>
-    <%= link_to "Project List", projects_path, class: "btn btn-primary" %>
+    <p align="center">
+      <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary" %>
+      <%= link_to "Project List", projects_path, class: "btn btn-primary" %>
+    </p>
     </div>
   </div>
+</div>
 </div>
   
 

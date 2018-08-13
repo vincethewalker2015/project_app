@@ -1,0 +1,30 @@
+<%= render "layouts/flash" %>
+<div class="container">
+  <div class="row toppie">
+    <h2 align="center">User Details</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well">
+      <p align="center">
+        Name: <%= @user.name.capitalize %>
+      </p>
+      <br />
+      <p align="center">
+        E-mail address: <%= @user.email %>
+      </p>
+      <% if @user.projects.count != 0 %>
+        <h5 align="center"><span class="#">Projects:</span> <%= @user.projects.count %></h5>
+      <% else %>
+        <h4 align="center">You don't seem to have any projects running..</h4>
+      <% end %>
+      <p align="center">
+        <%= link_to "Edit your details", edit_user_path(@user), class: "btn btn-primary" %>
+        <%= link_to "Project List", projects_path, class: "btn btn-primary" %>
+        <%= link_to "Create a New Project", new_project_path, class: "btn btn-primary" %>
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
