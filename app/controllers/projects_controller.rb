@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def new
     @project = Project.new
@@ -16,15 +19,15 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    @project = Project.find(params[:id])
+    
   end
   
   def edit
-    @project = Project.find(params[:id])
+    
   end
   
   def update
-    @project = Project.find(params[:id])
+   
     if @project.update(project_params)
       flash[:success] = "Project has been updated"
       redirect_to project_path(@project)
@@ -38,7 +41,7 @@ class ProjectsController < ApplicationController
   end
   
   def destroy
-    @project = Project.find(params[:id])
+   
     if @project.destroy
        flash[:danger] = "Project has been Deleted"
        redirect_to projects_path
@@ -53,6 +56,17 @@ class ProjectsController < ApplicationController
   
   def project_params
     params.require(:project).permit(:name, :description)
+  end
+  
+  def set_project
+    @project = Project.find(params[:id])
+  end
+  
+  def require_same_user
+    if current_user != @project.user
+      flash[:danger] = "You can only edit or delete your own Projects"
+      redirect_to projects_path
+    end
   end
   
 end
