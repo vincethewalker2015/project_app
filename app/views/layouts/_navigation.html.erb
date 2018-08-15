@@ -21,7 +21,7 @@
             <% end %>
              <% if current_user %>
                <li><%= link_to "Log Out", login_path, method: :delete, class: "btn btn-danger nav-button" %></li>
-               <li><%= link_to current_user.name  %>'s profile</li>
+               <li><%= link_to current_user.name  %><%= "(Admin)" if current_user.admin? %> 's profile</li>
              <% else %>
                 <li><%= link_to "Log In", login_path, class: "btn btn-success nav-button" %></li>
               <% end %>

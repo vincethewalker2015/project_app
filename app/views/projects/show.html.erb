@@ -15,7 +15,10 @@
       Description: <%= @project.description %>
     </p>
     <p align="center">
-      <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary" %>
+      <% if logged_in? && (current_user == @project.user || current_user.admin?) %>
+        <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-primary" %>
+        
+      <% end %>
       <%= link_to "Project List", projects_path, class: "btn btn-primary" %>
     </p>
     </div>

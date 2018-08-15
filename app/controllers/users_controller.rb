@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_admin, only: [:destroy]
 
   def index
     @users = User.all
@@ -62,11 +63,18 @@ class UsersController < ApplicationController
   end
   
   def require_same_user
-    if current_user != @user
+    if current_user != @user and !current_user.admin?
       flash[:danger] = "You can only edit or delete your own profile"
       redirect_to user_path
     end
       
+  end
+  
+  def require_admin
+    if logged_in? && !current_user.admin?
+      flash[:danger] = "Only Admin Users can perform this function"
+      redirect_to users_path
+    end
   end
   
 end
