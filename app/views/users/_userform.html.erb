@@ -42,7 +42,7 @@
           
           <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-              <%= f.submit "Create your profile", class: "btn btn-primary" %> 
+              <%= f.submit(@user.new_record? ? "Create your profile" : "Update your Profile", class: "btn btn-primary") %> 
               <%= link_to "Back to Project List", projects_path, class: "btn btn-primary" %> 
             </div>
           </div>

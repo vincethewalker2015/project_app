@@ -19,7 +19,8 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    
+    @comment = Comment.new
+    @comments = @project.comments
   end
   
   def edit
