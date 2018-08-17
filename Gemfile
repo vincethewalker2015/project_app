@@ -55,6 +55,7 @@ end
 group :production, :test do
   #Use Postgres as the database for Active Record in Production
   gem 'pg'
+  gem 'redis', ' ~> 3.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
