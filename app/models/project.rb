@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length: {minimum: 3}
   validates :description, presence: true
   belongs_to :user
   validates :user_id, presence: true

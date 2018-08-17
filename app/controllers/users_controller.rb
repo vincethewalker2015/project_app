@@ -13,9 +13,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    #@project.user = User.first
     if @user.save
       session[:user_id] = @user.id
+      cookies.signed[:user_id] = @user.id
       flash[:success] = "Profile has been created"
       redirect_to user_path(@user)
     else
