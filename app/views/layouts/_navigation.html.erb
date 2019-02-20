@@ -15,7 +15,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Project List", projects_path  %></li>
-            <li><%= link_to "About" %></li>
+           <!-- <li><%#= link_to "About" %></li> -->
             <% if logged_in? %>
             <li><%= link_to "Create a project", new_project_path %></li>
             <% end %>
